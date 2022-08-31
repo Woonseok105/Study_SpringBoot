@@ -15,7 +15,6 @@ import javax.transaction.Transactional;
 public class FeedService {
 
     private final FeedRepository feedRepository;
-
     @Transactional
     public String createFeed(FeedRequest feedRequest) {
         feedRepository.save(Feed.builder()
