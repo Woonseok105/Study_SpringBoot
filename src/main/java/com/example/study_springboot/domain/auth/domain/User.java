@@ -1,4 +1,4 @@
-package com.example.study_springboot.entity;
+package com.example.study_springboot.domain.auth.domain;
 
 import lombok.Builder;
 import lombok.Getter;
@@ -20,13 +20,13 @@ public class User {
     private Long Id;
 
     @NotBlank
-    private String userId;
+    private String accountId;
     @NotBlank
     private String password;
 
     @Builder
-    public User(String userId, String password) {
-        this.userId = userId;
+    public User(String accountId, String password) {
+        this.accountId = accountId;
         this.password = password;
     }
 }
