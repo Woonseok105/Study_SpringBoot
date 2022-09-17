@@ -1,7 +1,7 @@
-package com.example.study_springboot.controller;
+package com.example.study_springboot.domain.auth.presentaion;
 
-import com.example.study_springboot.dto.request.SignupRequest;
-import com.example.study_springboot.service.AuthService;
+import com.example.study_springboot.domain.auth.presentaion.dto.request.SignupRequest;
+import com.example.study_springboot.domain.auth.service.AuthService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

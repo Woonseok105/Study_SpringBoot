@@ -1,4 +1,4 @@
-package com.example.study_springboot.dto.request;
+package com.example.study_springboot.domain.auth.presentaion.dto.request;
 
 import com.sun.istack.NotNull;
 import lombok.Getter;
@@ -12,7 +12,7 @@ public class SignupRequest {
 
     @NotNull
     @Size(max = 12, message = "아이디는 12자 아래입니다")
-    private String userId;
+    private String accountId;
 
     @NotNull
     @Size(max = 24, message = "비밀번호는 24자 아래입니다")
