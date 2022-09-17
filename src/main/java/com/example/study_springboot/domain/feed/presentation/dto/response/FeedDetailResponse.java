@@ -1,4 +1,4 @@
-package com.example.study_springboot.dto.response;
+package com.example.study_springboot.domain.feed.presentation.dto.response;
 
 import lombok.Builder;
 import lombok.Getter;

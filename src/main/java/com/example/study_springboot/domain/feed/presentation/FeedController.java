@@ -1,8 +1,8 @@
-package com.example.study_springboot.controller;
+package com.example.study_springboot.domain.feed.presentation;
 
-import com.example.study_springboot.dto.request.FeedRequest;
-import com.example.study_springboot.dto.response.FeedDetailResponse;
-import com.example.study_springboot.service.FeedService;
+import com.example.study_springboot.domain.feed.presentation.dto.request.FeedRequest;
+import com.example.study_springboot.domain.feed.presentation.dto.response.FeedDetailResponse;
+import com.example.study_springboot.domain.feed.service.FeedService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
