@@ -1,8 +1,8 @@
-package com.example.study_springboot.service;
+package com.example.study_springboot.domain.auth.service;
 
-import com.example.study_springboot.dto.request.SignupRequest;
-import com.example.study_springboot.entity.User;
-import com.example.study_springboot.repository.UserRepository;
+import com.example.study_springboot.domain.auth.presentaion.dto.request.SignupRequest;
+import com.example.study_springboot.domain.auth.domain.User;
+import com.example.study_springboot.domain.auth.domain.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -17,7 +17,7 @@ public class AuthService {
 
     public String signup(SignupRequest signupRequest) {
         userRepository.save(User.builder()
-                        .userId(signupRequest.getUserId())
+                        .accountId(signupRequest.getAccountId())
                         .password(passwordEncoder.encode(signupRequest.getPassword()))
                 .build());
         return "Success!";
