@@ -1,4 +1,4 @@
-package com.example.study_springboot.entity;
+package com.example.study_springboot.domain.feed.domain;
 
 import lombok.AccessLevel;
 import lombok.Builder;

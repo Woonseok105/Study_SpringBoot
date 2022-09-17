@@ -1,6 +1,6 @@
-package com.example.study_springboot.repository;
+package com.example.study_springboot.domain.feed.domain.repository;
 
-import com.example.study_springboot.entity.Feed;
+import com.example.study_springboot.domain.feed.domain.Feed;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
