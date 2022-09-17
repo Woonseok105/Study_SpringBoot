@@ -1,9 +1,9 @@
-package com.example.study_springboot.service;
+package com.example.study_springboot.domain.feed.service;
 
-import com.example.study_springboot.dto.request.FeedRequest;
-import com.example.study_springboot.dto.response.FeedDetailResponse;
-import com.example.study_springboot.entity.Feed;
-import com.example.study_springboot.repository.FeedRepository;
+import com.example.study_springboot.domain.feed.presentation.dto.request.FeedRequest;
+import com.example.study_springboot.domain.feed.presentation.dto.response.FeedDetailResponse;
+import com.example.study_springboot.domain.feed.domain.Feed;
+import com.example.study_springboot.domain.feed.domain.repository.FeedRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
