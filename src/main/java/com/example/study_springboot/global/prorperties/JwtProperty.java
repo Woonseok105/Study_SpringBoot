@@ -1,4 +1,4 @@
-package com.example.study_springboot.global.security.jwt;
+package com.example.study_springboot.global.prorperties;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

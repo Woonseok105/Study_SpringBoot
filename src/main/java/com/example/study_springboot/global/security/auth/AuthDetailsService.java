@@ -1,7 +1,7 @@
 package com.example.study_springboot.global.security.auth;
 
-import com.example.study_springboot.domain.auth.domain.repository.UserRepository;
-import com.example.study_springboot.domain.auth.exception.UserNotFoundException;
+import com.example.study_springboot.domain.user.domain.repository.UserRepository;
+import com.example.study_springboot.domain.user.exception.UserNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

@@ -29,6 +29,6 @@ public class RedisConfig {
         RedisTemplate<?, ?> redisTemplate = new RedisTemplate<>();
         redisTemplate.setConnectionFactory(redisConnectionFactory());
         return redisTemplate;
-    }
+    } //RedisTemplate : Redis 서버에 데이터 CRUD를 위한 Key Type Operations 와 Key Bound Operations 인터페이스를 제공
 
 }
