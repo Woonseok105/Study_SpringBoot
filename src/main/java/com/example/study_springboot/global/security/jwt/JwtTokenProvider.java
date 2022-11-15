@@ -4,6 +4,7 @@ import com.example.study_springboot.domain.auth.domain.RefreshToken;
 import com.example.study_springboot.domain.auth.domain.repository.RefreshTokenRepository;
 import com.example.study_springboot.global.exception.ExpiredJwtException;
 import com.example.study_springboot.global.exception.InvalidJwtException;
+import com.example.study_springboot.global.prorperties.JwtProperty;
 import com.example.study_springboot.global.security.auth.AuthDetailsService;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
@@ -67,7 +68,7 @@ public class JwtTokenProvider {
     public Authentication authentication(String token) {
         UserDetails userDetails = authDetailsService.loadUserByUsername(getTokenSubject(token));
         return new UsernamePasswordAuthenticationToken(userDetails, "", userDetails.getAuthorities());
-    }
+    } //UsernamePasswordAuthenticationFilter → username, password를 쓰는 form기반 인증을 처리하는 필터, AuthenticationManager를 통한 인증 실행
 
     private String getTokenSubject(String token) {
         return getTokenBody(token).getSubject();
