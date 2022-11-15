@@ -1,4 +1,4 @@
-package com.example.study_springboot.domain.auth.domain;
+package com.example.study_springboot.domain.user.domain;
 
 import lombok.Builder;
 import lombok.Getter;
@@ -29,4 +29,5 @@ public class User {
         this.accountId = accountId;
         this.password = password;
     }
+
 }

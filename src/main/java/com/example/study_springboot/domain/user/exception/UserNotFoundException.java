@@ -1,4 +1,4 @@
-package com.example.study_springboot.domain.auth.exception;
+package com.example.study_springboot.domain.user.exception;
 
 import com.example.study_springboot.global.error.CustomException;
 import com.example.study_springboot.global.error.ErrorCode;

@@ -5,7 +5,7 @@ import com.example.study_springboot.domain.auth.domain.repository.RefreshTokenRe
 import com.example.study_springboot.domain.auth.exception.InvalidRefreshTokenException;
 import com.example.study_springboot.domain.auth.exception.RefreshTokenNotFoundException;
 import com.example.study_springboot.domain.auth.presentation.dto.response.TokenResponse;
-import com.example.study_springboot.global.security.jwt.JwtProperty;
+import com.example.study_springboot.global.prorperties.JwtProperty;
 import com.example.study_springboot.global.security.jwt.JwtTokenProvider;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

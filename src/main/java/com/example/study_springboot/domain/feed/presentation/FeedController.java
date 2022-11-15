@@ -31,7 +31,7 @@ public class FeedController {
          feedService.deleteFeed(feedId);
     }
 
-    @PatchMapping("/{feed-id}")
+    @PutMapping("/{feed-id}")
     public void updateFeed(@PathVariable("feed-id") Long feedId, @RequestBody FeedRequest feedRequest) {
         feedService.updateFeed(feedId, feedRequest);
     }

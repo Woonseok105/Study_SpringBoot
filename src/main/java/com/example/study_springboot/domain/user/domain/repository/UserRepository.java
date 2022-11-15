@@ -1,6 +1,6 @@
-package com.example.study_springboot.domain.auth.domain.repository;
+package com.example.study_springboot.domain.user.domain.repository;
 
-import com.example.study_springboot.domain.auth.domain.User;
+import com.example.study_springboot.domain.user.domain.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

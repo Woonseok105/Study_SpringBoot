@@ -1,4 +1,4 @@
-package com.example.study_springboot.domain.auth.presentaion.dto.request;
+package com.example.study_springboot.domain.user.presentaion.dto.request;
 
 import com.sun.istack.NotNull;
 import lombok.Getter;

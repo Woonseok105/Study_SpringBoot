@@ -27,6 +27,7 @@ public class FeedService {
     public FeedDetailResponse getFeed(Long feedId) {
         Feed feed = feedRepository.findById(feedId)
                 .orElseThrow(() -> new RuntimeException("게시글을 찾을 수 없습니다."));
+
         return FeedDetailResponse.builder()
                 .title(feed.getTitle())
                 .content(feed.getContent())
