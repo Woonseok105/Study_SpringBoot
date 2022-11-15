@@ -24,8 +24,10 @@ public class ExceptionFilter extends OncePerRequestFilter {
         try {
             filterChain.doFilter(request, response);
         } catch (CustomException e) {
+            logger.error(e);
             sendErrorMessage(response, e.getErrorCode());
         } catch (Exception e) {
+            logger.error(e);
             sendErrorMessage(response, ErrorCode.INTERNAL_SERVER_ERROR);
         }
     }
@@ -42,4 +44,5 @@ public class ExceptionFilter extends OncePerRequestFilter {
         response.setContentType(MediaType.APPLICATION_JSON_VALUE);
         response.getWriter().write(errorResponseJson);
     }
+
 }

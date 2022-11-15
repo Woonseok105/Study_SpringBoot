@@ -7,7 +7,11 @@ import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
+import javax.validation.ConstraintViolation;
+import javax.validation.ConstraintViolationException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @RestControllerAdvice
@@ -34,6 +38,20 @@ public class GlobalExceptionHandler {
                     error.getDefaultMessage()); // for 문에서 에러 필드랑 메세지를 넣어주고
         }
         return new ResponseEntity<>(errorList, HttpStatus.BAD_REQUEST); // 여기로 응답
+    }
+
+    @ExceptionHandler({ConstraintViolationException.class})
+    public ResponseEntity<Map<String, Object>> handleConstraintViolation(ConstraintViolationException e) {
+        Map<String, Object> errorMap = new HashMap<>();
+        List<String> errors = new ArrayList<>();
+        for (ConstraintViolation<?> violation : e.getConstraintViolations()) {
+            errors.add(violation.getRootBeanClass().getName() + " " +
+                    violation.getPropertyPath() + ": " + violation.getMessage());
+        }
+        errorMap.put("errors", errors);
+        errorMap.put("message", e.getMessage());
+
+        return new ResponseEntity<>(errorMap, HttpStatus.BAD_REQUEST);
     }
 
 }
