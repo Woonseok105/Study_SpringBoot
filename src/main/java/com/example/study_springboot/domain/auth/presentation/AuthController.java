@@ -1,28 +1,32 @@
 package com.example.study_springboot.domain.auth.presentation;
 
-import com.example.study_springboot.domain.auth.presentation.dto.request.UserSignInRequest;
 import com.example.study_springboot.domain.auth.presentation.dto.response.TokenResponse;
+import com.example.study_springboot.domain.auth.service.GoogleAuthService;
+import com.example.study_springboot.domain.auth.service.QueryGoogleAuthLinkService;
 import com.example.study_springboot.domain.auth.service.ReissueService;
-import com.example.study_springboot.domain.auth.service.TokenService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-
-import javax.validation.Valid;
 
 @RequiredArgsConstructor
 @RequestMapping("/auth")
 @RestController
 public class AuthController {
 
-    private final TokenService tokenService;
     private final ReissueService reissueService;
+    private final GoogleAuthService googleAuthService;
+    private final QueryGoogleAuthLinkService queryGoogleAuthLinkService;
 
-    @PostMapping("/token")
-    public TokenResponse signIn(@RequestBody @Valid UserSignInRequest request) {
-        return tokenService.userAuth(request);
+    @GetMapping("/google/auth")
+    public String queryGoogleAuthLink() {
+        return queryGoogleAuthLinkService.execute();
     }
 
-    @PatchMapping("/token")
+    @GetMapping("/receive-code")
+    public TokenResponse googleAuthLogIn(@RequestParam("code") String code) {
+        return googleAuthService.execute(code);
+    }
+
+    @PutMapping("/token")
     public TokenResponse userReissue(@RequestHeader("Refresh-Token") String refreshToken) {
         return reissueService.userReissue(refreshToken);
     }
